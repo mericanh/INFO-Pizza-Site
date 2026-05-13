@@ -1,0 +1,18 @@
+:root{
+    --paper: #fff8ef;
+    --paper-deep: #f2e2cf;
+    --ink: #201713;
+    --muted: #6f625b;
+    --tomato: #d9502f;
+    --tomato-dark: #a53722;
+    --basil: #315b3b;
+    --line: rgba(32,23,19,0.14);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}

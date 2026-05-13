@@ -5,11 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Boss Pizzeria | Eat Like A Boss</title>
         <meta name="description" content="Redesign Proposal for Boss Pizzeria">
+        <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" href="assets/logo-dark.png">
     </head>
     <body>
         <header>
-            <a href="index.html">Boss Pizzeria</a>
+            <a href="index.html" aria-label="Boss Pizzeria home">
+            <img src="assets/logo-dark.png" alt="" width="52" height="52">
+            <span>Boss Pizzeria</span>
+            </a>
             
             <!--NAVBAR SECTION-->
             <nav aria-label="Main navigation">
@@ -20,13 +24,59 @@
             </nav>
         </header>
         <main>
+            <!--HERO SECTION-->
             <section>
+                <img src="assets/hero-pizza.jpg">
                 <p>Napoli style wood-fire pizza</p>
                 <h1>Eat like a Boss.</h1>
                 <p>Authentic dough, Italian produce and a contemporary Melbourne touch</p>
 
                 <a href="#menu">View Menu</a>
                 <a href="#booking">Book a table</a>
+            </section>
+            <!--MENU SECTION-->
+            <section id="menu">
+                <p>Menu</p>
+                <h2>Wood-fire favourites</h1>
+
+                <article>
+                    <img src="assets/margherita.png">
+                    <h3>Margherita</h3>
+                    <p>San Marzano tomato, mozzarella, basil, parmigiano and extra virgin olive oil</p>
+                    <p>$26</p>
+                </article>
+                <article>
+                    <img src="assets/rustic-pizza.jpg">
+                    <h3>The Boss</h3>
+                    <p>San Marzano tomato, mascarpone, parmigiano, prosciutto and rocket</p>
+                    <p>$32</p>
+                </article>
+                <article>
+                    <img src="assets/hero-pizza.jpg">
+                    <h3>Salamino</h3>
+                    <p>San Marzano tomato, fior di latte, spicy salami, roasted peppers, olives and oregano</p>
+                    <p>$28</p>
+                </article>
+            </section>
+            <!--STORY-->
+            <section id="story">
+                <p>About</p>
+                <h2>Authentic Napoli craft, tuned for Melbourne.</h2>
+                <p>Boss Pizzeria focuses on wood-fired pizza, slow-risen dough, Italian ingredients and a warm neighbourhood dining experience.</p>
+            </section>
+            <!--VISIT-->
+            <section id="visit">
+            <p>Visit</p>
+            <h2>Dinner on Cookson Street.</h2>
+            <p>25 Cookson Street, Camberwell VIC 3124</p>
+            <p>Open Wednesday to Sunday for dinner.</p>
+            </section>
+            <!--BOOKING-->
+            <section id="booking">
+            <p>Bookings</p>
+            <h2>Save your table.</h2>
+            <p>Bookings are recommended, especially on weekends.</p>
+            <a href="tel:+61398131894">Call 03 9813 1894</a>
             </section>
         </main>
         <footer>
