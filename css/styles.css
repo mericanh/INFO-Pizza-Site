@@ -74,3 +74,43 @@ nav a{
 nav a:hover{
     border-color: var(--ink);
 }
+
+/*MAIN SECTION*/
+main > section{
+    padding: clamp(48px, 7vw, 88px);
+}
+/*Hero*/
+main >section:first-child{
+    align-items: end;
+    color: white;
+    display: grid;
+    min-height: 86vh;
+    overflow: hidden;
+    position: relative;
+}
+main >section:first-child >img{
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+main > section:first-child::after{
+    background: linear-gradient(
+        90deg,
+        rgba(32,23,19,0.78),
+        rgba(32,23,19,0.38) 55%,
+        rgba(32,23,19,0.12)
+    );
+    content: "";
+    inset: 0;
+    position: absolute;
+    z-index:1;
+}
+main > section:first-child > *:not(img){
+    max-width: 780px;
+    position: relative;
+    z-index: 2;
+}
