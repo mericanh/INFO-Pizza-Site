@@ -48,7 +48,7 @@ header > a{
 }
 
 header > a img{
-    background: var(--ink);
+    background: white;
     border: 2px solid var(--ink);
     border-radius: 50%;
     height: 52px;
