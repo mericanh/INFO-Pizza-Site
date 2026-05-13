@@ -174,3 +174,32 @@ h2{
 h3{
     font-size: 30px;
 }
+
+/*MOBILE ASHERENCE*/
+@media (max-width: 760px) {
+  header {
+    align-items: center;
+    gap: 18px;
+    flex-direction: column;
+    padding: 18px 20px 22px;
+  }
+
+  header > a {
+    justify-content: center;
+  }
+
+  header > a img {
+    height: 64px;
+    width: 64px;
+  }
+
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 18px;
+    padding: 8px 10px;
+  }
+}
