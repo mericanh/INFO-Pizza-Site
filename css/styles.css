@@ -16,3 +16,61 @@
 html{
     scroll-behavior: smooth;
 }
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+a{
+    color:inherit;
+    text-decoration: none;
+}
+/*HEADER SECTION*/
+header{
+    align-items: center;
+    background: rgba(255,248,238,0.95);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    padding: 14px clamp(18px,4vw,56px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header > a{
+    align-items: center;
+    display: inline-flex;
+    gap: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+header > a img{
+    background: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    height: 52px;
+    object-fit: contain;
+    padding: 4px;
+    width: 52px;
+}
+
+/*NAV SECTION*/
+nav{
+    align-items: center;
+    display:flex;
+    gap: 8px;
+}
+
+nav a{
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 10px 14px;
+}
+
+nav a:hover{
+    border-color: var(--ink);
+}
