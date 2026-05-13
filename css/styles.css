@@ -114,3 +114,36 @@ main > section:first-child > *:not(img){
     position: relative;
     z-index: 2;
 }
+
+main > section:first-child p:first-of-type,
+section > p:first-child{
+    color: var(--tomato);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+}
+
+main > section:first-child p:first-of-type{
+    color: #ffd8c1;
+}
+
+/*generics*/
+h1,h2,h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 0.98;
+    margin: 0;
+}
+
+h1{
+    font-size: clamp(64px,14vw, 156px);
+}
+
+h2{
+    font-size: clamp(38px,6vw, 76px);
+}
+
+h3{
+    font-size: 30px;
+}
