@@ -84,8 +84,8 @@ nav a:hover{
 }
 
 /*MAIN SECTION*/
-main > section{
-    padding: clamp(48px, 7vw, 88px);
+main > section {
+    padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 72px);
 }
 /*Hero*/
 main >section:first-child{
@@ -209,6 +209,26 @@ main > section:first-child a:first-of-type:hover{
     margin-bottom: 18px;
 }
 
+/*Story*/
+#story{
+    background: var(--paper);
+}
+
+#story p:not(:first-child) {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 720px;
+}
+
+/*Visit*/
+#visit{
+    background: var(--basil);
+    color: white;
+}
+
+#visit > p:first-child{
+    color: #d5f0bc;
+}
 
 /*generics*/
 h1,h2,h3{
