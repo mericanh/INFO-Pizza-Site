@@ -293,7 +293,6 @@ h3{
 /*Generics for BOOKING STORY ORDERING*/
 .section-button {
     background: var(--tomato);
-    border: 1px solid var(--tomato);
     color: white;
     display: inline-flex;
     font-weight: 900;
@@ -320,18 +319,6 @@ h3{
     background: var(--ink);
     border-color: var(--ink);
     color: white;
-}
-
-.light-button {
-    background: transparent;
-    border-color: white;
-    color: white;
-}
-
-.light-button:hover {
-    background: white;
-    border-color: white;
-    color: var(--basil);
 }
 
 /*MOBILE ASHERENCE*/
@@ -384,8 +371,8 @@ h3{
   }
 
   nav a {
-    font-size: 18px;
-    padding: 8px 10px;
+    font-size: 16px;
+    padding: 8px 8px;
   }
 
   #menu{
