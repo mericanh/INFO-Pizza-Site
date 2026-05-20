@@ -37,7 +37,7 @@ a{
 /*HEADER SECTION*/
 header{
     align-items: center;
-    background: rgba(255,248,238,0.95);
+    background: rgba(255,248,238,1);
     border-bottom: 1px solid var(--line);
     display: flex;
     justify-content: space-between;
@@ -45,6 +45,7 @@ header{
     position: sticky;
     top: 0;
     z-index: 10;
+    opacity: 1;
 }
 
 header > a{
@@ -70,11 +71,12 @@ nav{
     align-items: center;
     display:flex;
     gap: 8px;
+    opacity: 1;
 }
 
 nav a{
     border: 1px solid transparent;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
     padding: 10px 14px;
 }
@@ -309,15 +311,15 @@ h3{
 }
 
 .secondary-button {
-    background: transparent;
+    background: var(--ink);
     border-color: var(--ink);
-    color: var(--ink);
+    color: white;
     margin-left: 10px;
 }
 
 .secondary-button:hover {
-    background: var(--ink);
-    border-color: var(--ink);
+    background: var(--basil);
+    border-color: var(--basil);
     color: white;
 }
 
