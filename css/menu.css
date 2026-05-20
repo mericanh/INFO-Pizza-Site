@@ -114,6 +114,24 @@ h3 {
     font-size: 20px;
     max-width: 680px;
 }
+.section-button {
+    background: var(--tomato);
+    border: 1px solid var(--tomato);
+    color: white;
+    display: inline-flex;
+    font-weight: 900;
+    justify-content: center;
+    margin-top: 18px;
+    min-height: 50px;
+    padding: 14px 18px;
+    width: fit-content;
+}
+
+.section-button:hover {
+    background: var(--tomato-dark);
+    border-color: var(--tomato-dark);
+}
+
 
 /* FULL MENU */
 .full-menu {

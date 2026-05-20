@@ -6,6 +6,7 @@
     <title>Order | Boss Pizzeria</title>
     <meta name="description" content="Build a Boss Pizzeria order.">
     <link rel="stylesheet" href="css/order.css">
+    <link rel="icon" href="assets/logo-dark.png">
   </head>
 
   <body>
@@ -33,60 +34,113 @@
 
       <section class="order-layout">
         <div class="order-list">
-          <article class="order-card">
+            <article class="order-card">
             <img src="assets/margherita.png" alt="Margherita pizza with fresh basil">
             <div>
-              <p>Pizza</p>
-              <h2>Margherita</h2>
-              <p>San Marzano tomato, mozzarella, basil, parmigiano and extra virgin olive oil.</p>
-              <strong>$26</strong>
-              <button type="button">Add to order</button>
-            </div>
-          </article>
+                <p>Pizza</p>
+                <h2>Margherita</h2>
+                <p>San Marzano tomato, mozzarella, basil, parmigiano and extra virgin olive oil.</p>
+                <strong>$26</strong>
 
-          <article class="order-card">
+                <label class="option-check">
+                <input type="checkbox" data-option="gluten-free">
+                <span>Gluten free base +$6</span>
+                </label>
+
+                <label class="quantity-control">
+                <span>Quantity</span>
+                <input type="number" min="1" value="1" data-quantity>
+                </label>
+
+                <button type="button" data-add-item data-name="Margherita" data-price="26" data-gluten-eligible="true">
+                Add to order
+                </button>
+            </div>
+            </article>
+
+            <article class="order-card">
             <img src="assets/hero-pizza.jpg" alt="Pizza with salami, basil and yellow chilli">
             <div>
-              <p>Pizza</p>
-              <h2>Salamino</h2>
-              <p>Spicy salami, roasted peppers, olives and oregano.</p>
-              <strong>$28</strong>
-              <button type="button">Add to order</button>
-            </div>
-          </article>
+                <p>Pizza</p>
+                <h2>Salamino</h2>
+                <p>Spicy salami, roasted peppers, olives and oregano.</p>
+                <strong>$28</strong>
 
-          <article class="order-card">
+                <label class="option-check">
+                <input type="checkbox" data-option="gluten-free">
+                <span>Gluten free base +$6</span>
+                </label>
+
+                <label class="quantity-control">
+                <span>Quantity</span>
+                <input type="number" min="1" value="1" data-quantity>
+                </label>
+
+                <button type="button" data-add-item data-name="Salamino" data-price="28" data-gluten-eligible="true">
+                Add to order
+                </button>
+            </div>
+            </article>
+
+            <article class="order-card">
             <img src="assets/eggplant-pizza.png" alt="Eggplant pizza with pesto and chilli">
             <div>
-              <p>Pizza</p>
-              <h2>Zucca</h2>
-              <p>Creamed ricotta, cavolo nero, roasted pumpkin, goat's cheese, pine nuts and thyme.</p>
-              <strong>$30</strong>
-              <button type="button">Add to order</button>
-            </div>
-          </article>
+                <p>Pizza</p>
+                <h2>Zucca</h2>
+                <p>Creamed ricotta, cavolo nero, roasted pumpkin, goat's cheese, pine nuts and thyme.</p>
+                <strong>$30</strong>
 
-          <article class="order-card">
+                <label class="option-check">
+                <input type="checkbox" data-option="gluten-free">
+                <span>Gluten free base +$6</span>
+                </label>
+
+                <label class="quantity-control">
+                <span>Quantity</span>
+                <input type="number" min="1" value="1" data-quantity>
+                </label>
+
+                <button type="button" data-add-item data-name="Zucca" data-price="30" data-gluten-eligible="true">
+                Add to order
+                </button>
+            </div>
+            </article>
+
+            <article class="order-card">
             <img src="assets/coke.png" alt="Coca Cola can">
             <div>
-              <p>Drink</p>
-              <h2>Coca Cola Classic</h2>
-              <p>A chilled 375 ml classic can.</p>
-              <strong>$4.50</strong>
-              <button type="button">Add to order</button>
+                <p>Drink</p>
+                <h2>Coca Cola Classic</h2>
+                <p>A chilled 375 ml classic can.</p>
+                <strong>$4.50</strong>
+
+                <label class="quantity-control">
+                <span>Quantity</span>
+                <input type="number" min="1" value="1" data-quantity>
+                </label>
+
+                <button type="button" data-add-item data-name="Coca Cola Classic" data-price="4.5" data-gluten-eligible="false">
+                Add to order
+                </button>
             </div>
-          </article>
+            </article>
         </div>
 
         <aside class="order-summary">
-          <h2>Your order</h2>
-          <p>Your basket is waiting for its first pizza.</p>
-          <div class="summary-line">
-            <span>Total</span>
-            <strong>$0.00</strong>
-          </div>
-          <button type="button">Review order</button>
-        </aside>
+            <h2>Your order</h2>
+
+            <p class="empty-cart-message" data-empty-cart>Your basket is waiting for its first pizza.</p>
+
+            <div class="cart-items" data-cart-items></div>
+
+            <div class="summary-line">
+                <span>Total</span>
+                <strong data-cart-total>$0.00</strong>
+            </div>
+
+            <button type="button" data-review-order>Review order</button>
+            <p class="review-message" data-review-message></p>
+            </aside>
       </section>
     </main>
 
