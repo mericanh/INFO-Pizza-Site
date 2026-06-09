@@ -5,7 +5,11 @@ const emptyCartMessage = document.querySelector("[data-empty-cart]");
 const reviewButton = document.querySelector("[data-review-order]");
 const reviewMessage = document.querySelector("[data-review-message]");
 
-const cart = [];
+let cart = JSON.parse(localStorage.getItem("bossCart")) || [];
+
+function saveCart() {
+  localStorage.setItem("bossCart", JSON.stringify(cart));
+}
 
 function formatCurrency(value) {
   return new Intl.NumberFormat("en-AU", {
@@ -52,6 +56,13 @@ function addItemToCart(name, basePrice, options) {
     });
   }
 
+  saveCart();
+  renderCart();
+}
+
+function removeItemFromCart(cartKey) {
+  cart = cart.filter((item) => item.cartKey !== cartKey);
+  saveCart();
   renderCart();
 }
 
@@ -91,16 +102,6 @@ function renderCart() {
   cartTotal.textContent = formatCurrency(calculateTotal());
 }
 
-function removeItemFromCart(cartKey) {
-  const itemIndex = cart.findIndex((item) => item.cartKey === cartKey);
-
-  if (itemIndex !== -1) {
-    cart.splice(itemIndex, 1);
-  }
-
-  renderCart();
-}
-
 addButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const name = button.dataset.name;
@@ -116,15 +117,6 @@ addButtons.forEach((button) => {
   });
 });
 
-reviewButton.addEventListener("click", () => {
-  if (cart.length === 0) {
-    reviewMessage.textContent = "Add at least one item before reviewing your order.";
-    return;
-  }
-
-  reviewMessage.textContent = `Order is ready. Your total is ${formatCurrency(calculateTotal())}.`;
-});
-
 cartItemsContainer.addEventListener("click", (event) => {
   const removeButton = event.target.closest("[data-remove-item]");
 
@@ -134,3 +126,14 @@ cartItemsContainer.addEventListener("click", (event) => {
 
   removeItemFromCart(removeButton.dataset.removeItem);
 });
+
+reviewButton.addEventListener("click", () => {
+  if (cart.length === 0) {
+    reviewMessage.textContent = "Add at least one item before reviewing your order.";
+    return;
+  }
+
+  window.location.href = "cart.html";
+});
+
+renderCart();

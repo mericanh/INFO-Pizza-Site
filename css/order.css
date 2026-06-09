@@ -70,7 +70,7 @@ nav {
 
 nav a {
     border: 1px solid transparent;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
     padding: 10px 14px;
 }
@@ -340,7 +340,6 @@ footer p {
     }
 
     nav {
-        flex-wrap: wrap;
         justify-content: center;
         width: 100%;
     }
