@@ -79,7 +79,7 @@ nav a:hover {
     border-color: var(--ink);
 }
 
-/* HERO */
+/* PAGE HERO */
 main > section {
     padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 72px);
 }
@@ -116,74 +116,85 @@ h3 {
     max-width: 680px;
 }
 
-/* CART */
-.cart-page {
+/* CHECKOUT */
+.checkout-page {
     align-items: start;
     background: #fbf1e5;
     display: grid;
     gap: 24px;
-    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-columns: minmax(0, 1fr) 360px;
 }
 
-.cart-panel {
+.checkout-form {
     background: white;
     border: 1px solid var(--line);
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 24px;
 }
 
-.empty-cart-message {
+.checkout-form label {
     color: var(--muted);
-    margin: 0;
-}
-
-.cart-items {
     display: grid;
-    gap: 14px;
-}
-
-.cart-row {
-    border-bottom: 1px solid var(--line);
-    display: grid;
-    gap: 12px;
-    grid-template-columns: minmax(0, 1fr) auto;
-    padding-bottom: 14px;
-}
-
-.cart-row div {
-    display: grid;
-    gap: 4px;
-}
-
-.cart-row small,
-.cart-row span {
-    color: var(--muted);
-}
-
-.cart-row-actions {
-    align-items: end;
-    display: grid;
-    gap: 8px;
-    justify-items: end;
-}
-
-.cart-row-actions button {
-    background: transparent;
-    border: 1px solid var(--line);
-    color: var(--muted);
-    cursor: pointer;
-    font: inherit;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 900;
-    padding: 6px 8px;
+    gap: 8px;
     text-transform: uppercase;
 }
 
-.cart-row-actions button:hover {
-    background: var(--ink);
-    color: white;
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font: inherit;
+    min-height: 48px;
+    padding: 12px;
+    width: 100%;
 }
 
-.cart-summary {
+.checkout-form textarea {
+    resize: vertical;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+    border-color: var(--tomato);
+    outline: 3px solid rgba(217, 80, 47, 0.18);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.checkout-form button {
+    background: var(--tomato);
+    border: 1px solid var(--tomato);
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 900;
+    grid-column: 1 / -1;
+    min-height: 50px;
+    padding: 14px 18px;
+}
+
+.checkout-form button:hover {
+    background: var(--tomato-dark);
+    border-color: var(--tomato-dark);
+}
+
+.form-message {
+    color: var(--tomato-dark);
+    font-weight: 800;
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+/* CHECKOUT SUMMARY */
+.checkout-summary {
     background: var(--ink);
     color: white;
     display: grid;
@@ -193,8 +204,20 @@ h3 {
     top: 98px;
 }
 
-.cart-summary h2 {
+.checkout-summary h2 {
     font-size: 36px;
+}
+
+.summary-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    display: grid;
+    gap: 4px;
+    padding-bottom: 12px;
+}
+
+.summary-item small,
+.summary-item span {
+    color: rgba(255, 255, 255, 0.64);
 }
 
 .summary-line {
@@ -209,35 +232,6 @@ h3 {
     font-size: 22px;
 }
 
-.primary-action,
-.secondary-action {
-    display: inline-flex;
-    font-weight: 900;
-    justify-content: center;
-    min-height: 50px;
-    padding: 14px 18px;
-}
-
-.primary-action {
-    background: var(--tomato);
-    color: white;
-}
-
-.primary-action:hover {
-    background: var(--tomato-dark);
-}
-
-.secondary-action {
-    border: 1px solid rgba(255, 255, 255, 0.32);
-    color: white;
-}
-
-.cart-warning {
-    color: #ffd8c1;
-    font-weight: 800;
-    margin: 0;
-}
-
 /* FOOTER */
 footer {
     background: var(--ink);
@@ -249,13 +243,13 @@ footer p {
     margin: 0;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-    .cart-page {
+    .checkout-page {
         grid-template-columns: 1fr;
     }
 
-    .cart-summary {
+    .checkout-summary {
         position: static;
     }
 }
@@ -284,11 +278,7 @@ footer p {
         padding: 8px 8px;
     }
 
-    .cart-row {
+    .checkout-form {
         grid-template-columns: 1fr;
-    }
-
-    .cart-row-actions {
-        justify-items: start;
     }
 }

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout | Boss Pizzeria</title>
+    <meta name="description" content="Checkout demo order for Boss Pizzeria.">
+    <link rel="stylesheet" href="css/checkout.css">
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" aria-label="Boss Pizzeria home">
+        <img src="assets/logo-dark.png" alt="" width="52" height="52">
+        <span>Boss Pizzeria</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p>Checkout</p>
+        <h1>Almost there.</h1>
+        <p>Enter your details to prepare the demo order.</p>
+      </section>
+
+      <section class="checkout-page">
+        <form class="checkout-form" data-checkout-form>
+          <label>
+            Name
+            <input name="name" type="text" autocomplete="name" required>
+          </label>
+
+          <label>
+            Phone
+            <input name="phone" type="tel" autocomplete="tel" required>
+          </label>
+
+          <label>
+            Order type
+            <select name="orderType" required>
+              <option value="Pickup">Pickup</option>
+              <option value="Dine in">Dine in</option>
+            </select>
+          </label>
+
+          <label>
+            Preferred time
+            <input name="time" type="time" required>
+          </label>
+
+          <label class="full">
+            Notes
+            <textarea name="notes" rows="4" placeholder="Allergy notes, no chilli, extra basil"></textarea>
+          </label>
+
+          <button type="submit">Place demo order</button>
+          <p class="form-message" data-form-message></p>
+        </form>
+
+        <aside class="checkout-summary">
+          <h2>Order summary</h2>
+          <div data-summary-items></div>
+          <div class="summary-line">
+            <span>Total</span>
+            <strong data-summary-total>$0.00</strong>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <p>Boss Pizzeria, Camberwell</p>
+    </footer>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>
