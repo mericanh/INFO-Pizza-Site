@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cart | Boss Pizzeria</title>
+    <meta name="description" content="Review your Boss Pizzeria cart.">
+    <link rel="stylesheet" href="css/cart.css">
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" aria-label="Boss Pizzeria home">
+        <img src="assets/logo-dark.png" alt="" width="52" height="52">
+        <span>Boss Pizzeria</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p>Your cart</p>
+        <h1>Review your order.</h1>
+        <p>Check your items before moving to checkout.</p>
+      </section>
+
+      <section class="cart-page">
+        <div class="cart-panel">
+          <p class="empty-cart-message" data-empty-cart>Your cart is currently empty.</p>
+          <div class="cart-items" data-cart-items></div>
+        </div>
+
+        <aside class="cart-summary">
+          <h2>Summary</h2>
+          <div class="summary-line">
+            <span>Total</span>
+            <strong data-cart-total>$0.00</strong>
+          </div>
+
+          <a class="primary-action" href="checkout.html" data-checkout-link>Continue to checkout</a>
+          <a class="secondary-action" href="order.html">Add more items</a>
+          <p class="cart-warning" data-cart-warning></p>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <p>Boss Pizzeria, Camberwell</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+  </body>
+</html>
