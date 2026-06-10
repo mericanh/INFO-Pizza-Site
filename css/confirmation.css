@@ -1,0 +1,182 @@
+:root {
+    --paper: #fff8ef;
+    --ink: #201713;
+    --muted: #6f625b;
+    --tomato: #d9502f;
+    --tomato-dark: #a53722;
+    --line: rgba(32, 23, 19, 0.14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+header {
+    align-items: center;
+    background: rgba(255, 248, 239, 0.95);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    padding: 14px clamp(18px, 4vw, 56px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header > a {
+    align-items: center;
+    display: inline-flex;
+    gap: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+header > a img {
+    background: white;
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    height: 52px;
+    object-fit: contain;
+    padding: 4px;
+    width: 52px;
+}
+
+nav {
+    display: flex;
+    gap: 8px;
+}
+
+nav a {
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 10px 14px;
+}
+
+nav a:hover {
+    border-color: var(--ink);
+}
+
+.confirmation-page {
+    background: #fbf1e5;
+    min-height: 80vh;
+    padding: clamp(48px, 7vw, 88px) clamp(20px, 5vw, 72px);
+}
+
+.confirmation-page > p:first-child {
+    color: var(--tomato);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+}
+
+h1,
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 0.98;
+    margin: 0;
+}
+
+h1 {
+    font-size: clamp(56px, 10vw, 126px);
+}
+
+.confirmation-page > p:not(:first-child) {
+    color: var(--muted);
+    font-size: 20px;
+}
+
+.confirmation-card {
+    background: white;
+    border: 1px solid var(--line);
+    display: grid;
+    gap: 14px;
+    margin-top: 32px;
+    max-width: 760px;
+    padding: 24px;
+}
+
+.confirmation-card h2 {
+    font-size: 36px;
+}
+
+.confirmation-card p {
+    margin: 0;
+}
+
+.confirmation-item {
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 4px;
+    padding-top: 12px;
+}
+
+.confirmation-item small {
+    color: var(--muted);
+}
+
+.confirmation-card a {
+    background: var(--tomato);
+    color: white;
+    display: inline-flex;
+    font-weight: 900;
+    justify-content: center;
+    margin-top: 12px;
+    min-height: 50px;
+    padding: 14px 18px;
+    width: fit-content;
+}
+
+.confirmation-card a:hover {
+    background: var(--tomato-dark);
+}
+
+footer {
+    background: var(--ink);
+    color: white;
+    padding: 28px clamp(20px, 5vw, 72px);
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    header {
+        align-items: center;
+        gap: 18px;
+        flex-direction: column;
+        padding: 18px 20px 22px;
+    }
+
+    header > a img {
+        height: 64px;
+        width: 64px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 8px;
+    }
+}

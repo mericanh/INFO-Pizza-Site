@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Confirmation | Boss Pizzeria</title>
+    <meta name="description" content="Boss Pizzeria order confirmation.">
+    <link rel="stylesheet" href="css/confirmation.css">
+    <link rel="icon" href="assets/logo-dark.png">
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" aria-label="Boss Pizzeria home">
+        <img src="assets/logo-dark.png" alt="" width="52" height="52">
+        <span>Boss Pizzeria</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="order.html">Order again</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="confirmation-page">
+        <p>Confirmed</p>
+        <h1>Thanks, <span data-customer-name>Boss</span>.</h1>
+        <p>Your demo order has been prepared.</p>
+
+        <div class="confirmation-card">
+          <h2>Order details</h2>
+          <p><strong>Order number:</strong> <span data-order-number></span></p>
+          <p><strong>Order type:</strong> <span data-order-type></span></p>
+          <p><strong>Preferred time:</strong> <span data-order-time></span></p>
+          <p><strong>Total:</strong> <span data-order-total></span></p>
+
+          <div data-confirmation-items></div>
+
+          <a href="index.html">Return home</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Boss Pizzeria, Camberwell</p>
+    </footer>
+
+    <script src="confirmation.js"></script>
+  </body>
+</html>
