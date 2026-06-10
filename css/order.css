@@ -6,6 +6,8 @@
     --tomato: #d9502f;
     --tomato-dark: #a53722;
     --line: rgba(32, 23, 19, 0.14);
+    --shadow: 0 18px 48px rgba(68, 35, 21, 0.14);
+    --shadow-hover: 0 24px 60px rgba(68, 35, 21, 0.2);
 }
 
 * {
@@ -135,8 +137,14 @@ h3 {
 .order-card {
     background: white;
     border: 1px solid var(--line);
+    box-shadow: var(--shadow);
     display: grid;
     overflow: hidden;
+    transition: box-shadow 180ms ease, transform 180ms ease;
+}
+.order-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px);
 }
 
 .order-card img {
