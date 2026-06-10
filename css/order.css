@@ -147,6 +147,32 @@ h3 {
     transform: translateY(-3px);
 }
 
+.order-card.is-added {
+    border-color: var(--tomato);
+    box-shadow: 0 28px 70px rgba(217, 80, 47, 0.28);
+    transform: translateY(-4px);
+}
+
+.order-card.is-added::after {
+    background: var(--tomato);
+    color: white;
+    content: "Added to cart";
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    padding: 8px 10px;
+    position: absolute;
+    right: 14px;
+    text-transform: uppercase;
+    top: 14px;
+    z-index: 2;
+}
+
+.order-card button.is-added {
+    background: var(--ink);
+    border-color: var(--ink);
+}
+
 .order-card img {
     aspect-ratio: 4 / 3;
     height: 100%;
@@ -295,7 +321,39 @@ h3 {
     justify-items: end;
 }
 
-.cart-row-actions button {
+.summary-quantity-control {
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    display: grid;
+    grid-template-columns: 32px 38px 32px;
+    min-height: 34px;
+}
+
+.summary-quantity-control button {
+    background: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 900;
+    padding: 0;
+}
+
+.summary-quantity-control button:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.summary-quantity-control span {
+    align-items: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.22);
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+    color: white;
+    display: flex;
+    font-size: 13px;
+    font-weight: 900;
+    justify-content: center;
+}
+
+.cart-row-actions > button {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.32);
     color: rgba(255, 255, 255, 0.78);
@@ -307,7 +365,7 @@ h3 {
     text-transform: uppercase;
 }
 
-.cart-row-actions button:hover {
+.cart-row-actions > button:hover {
     background: white;
     color: var(--ink);
 }
@@ -359,5 +417,8 @@ footer p {
 
     .order-list {
         grid-template-columns: 1fr;
+    }
+    .order-card.is-added {
+        transform: none;
     }
 }

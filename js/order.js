@@ -71,6 +71,35 @@ function calculateTotal() {
     return total + item.unitPrice * item.quantity;
   }, 0);
 }
+function increaseItemQuantity(cartKey) {
+  const item = cart.find((cartItem) => cartItem.cartKey === cartKey);
+
+  if (!item) {
+    return;
+  }
+
+  item.quantity += 1;
+  saveCart();
+  renderCart();
+}
+
+function decreaseItemQuantity(cartKey) {
+  const item = cart.find((cartItem) => cartItem.cartKey === cartKey);
+
+  if (!item) {
+    return;
+  }
+
+  item.quantity -= 1;
+
+  if (item.quantity <= 0) {
+    removeItemFromCart(cartKey);
+    return;
+  }
+
+  saveCart();
+  renderCart();
+}
 
 function renderCart() {
   cartItemsContainer.innerHTML = "";
@@ -92,6 +121,13 @@ function renderCart() {
 
       <div class="cart-row-actions">
         <strong>${formatCurrency(item.unitPrice * item.quantity)}</strong>
+
+        <div class="summary-quantity-control" aria-label="Update quantity for ${item.name}">
+          <button type="button" data-decrease-item="${item.cartKey}">-</button>
+          <span>${item.quantity}</span>
+          <button type="button" data-increase-item="${item.cartKey}">+</button>
+        </div>
+
         <button type="button" data-remove-item="${item.cartKey}">Remove</button>
       </div>
     `;
@@ -110,21 +146,38 @@ addButtons.forEach((button) => {
 
     addItemToCart(name, basePrice, options);
 
-    button.textContent = "Added";
+    const card = button.closest(".order-card");
+
+    card.classList.add("is-added");
+    button.classList.add("is-added");
+    button.textContent = "Added to cart";
+
     setTimeout(() => {
+      card.classList.remove("is-added");
+      button.classList.remove("is-added");
       button.textContent = "Add to order";
-    }, 800);
+    }, 1200);
   });
 });
 
 cartItemsContainer.addEventListener("click", (event) => {
   const removeButton = event.target.closest("[data-remove-item]");
+  const increaseButton = event.target.closest("[data-increase-item]");
+  const decreaseButton = event.target.closest("[data-decrease-item]");
 
-  if (!removeButton) {
+  if (removeButton) {
+    removeItemFromCart(removeButton.dataset.removeItem);
     return;
   }
 
-  removeItemFromCart(removeButton.dataset.removeItem);
+  if (increaseButton) {
+    increaseItemQuantity(increaseButton.dataset.increaseItem);
+    return;
+  }
+
+  if (decreaseButton) {
+    decreaseItemQuantity(decreaseButton.dataset.decreaseItem);
+  }
 });
 
 reviewButton.addEventListener("click", () => {
